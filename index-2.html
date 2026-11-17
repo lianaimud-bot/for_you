@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Message For You</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Georgia,serif;
+  background:linear-gradient(135deg,#180000,#5c0000,#300000);
+  color:#fff;min-height:100vh;display:flex;justify-content:center;
+  align-items:center;padding:20px
+}
+.container{
+  width:100%;max-width:650px;background:rgba(35,0,0,.9);
+  border:1px solid #8b2929;border-radius:18px;padding:30px;
+  box-shadow:0 10px 40px rgba(0,0,0,.6)
+}
+h1{color:#ff7777;text-align:center;margin-bottom:15px;font-size:28px}
+.subtitle{text-align:center;color:#d9aaaa;margin-bottom:20px}
+input{
+  width:100%;padding:15px;border:1px solid #922b2b;border-radius:10px;
+  background:#250000;color:white;font-size:17px;text-align:center;
+  outline:none;margin:15px 0
+}
+input::placeholder{color:#bb8585}
+button{
+  width:100%;padding:14px;background:#a50000;color:white;border:0;
+  border-radius:10px;font-size:16px;cursor:pointer;transition:.3s
+}
+button:hover{background:#d00000}
+#error{color:#ff7777;text-align:center;margin-top:12px}
+#message{display:none;text-align:left;line-height:1.9;font-size:15px;color:#f5dddd;margin-top:20px}
+#message h2{text-align:center;color:#ff7777;margin-bottom:25px}
+.paragraph{margin-bottom:20px}
+.footer{text-align:center;color:#ff9999;margin-top:30px;font-style:italic}
+</style>
+</head>
+<body>
+<div class="container">
+  <div id="login">
+    <h1>A Message For You</h1>
+    <p class="subtitle">Please enter the password to read my message.</p>
+    <input type="password" id="password" placeholder="Enter password"
+      onkeydown="if(event.key==='Enter') checkPassword()">
+    <button onclick="checkPassword()">Open Message</button>
+    <p id="error"></p>
+  </div>
+
+  <div id="message">
+    <h2>Something I Want To Tell You</h2>
+    <p class="paragraph">Hi, baby. How are you? I hope you're doing well. I'm using this link so you can read my message because I know that if I send it through chat, you probably won't open it.</p>
+    <p class="paragraph">By the way, have you eaten yet? If you haven't, please don't forget to eat, okay? Take care of yourself.</p>
+    <p class="paragraph">There's something I want to ask you. Did I do something wrong that made you stop replying to my messages? I've tried contacting you through all your social media accounts, but I haven't received a single response. If I did something wrong, please just tell me. I'd rather you be honest with me than leave me wondering and waiting like this. I really don't like being ignored without knowing the reason.</p>
+    <p class="paragraph">I also noticed that you've turned off your online status on all your social media accounts, at least from what I can see. I don't know why things suddenly became like this between us, but I sincerely hope you'll reply to my messages.</p>
+    <p class="paragraph">And if you're already getting bored of me or if you no longer have feelings for me, please just tell me. We can talk about it through chat. I don't want us to keep avoiding each other or pretending that everything is okay when something might actually be wrong.</p>
+    <p class="paragraph">I really hope you'll open the link I made for you and take a moment to reply to my message. I'm not asking for much. I just want an honest answer and a little communication from you.</p>
+    <p class="paragraph">As for me, my feelings are still the same. I still care about you, and nothing has changed on my side. I'm still here, hoping we can talk things through.</p>
+    <p class="paragraph">I miss talking to you. Please don't leave me wondering anymore. 🤍</p>
+    <div class="footer">Thank you for taking the time to read this.</div>
+  </div>
+</div>
+<script>
+function checkPassword(){
+  const password=document.getElementById("password").value;
+  if(password==="1118"){
+    document.getElementById("login").style.display="none";
+    document.getElementById("message").style.display="block";
+  }else{
+    document.getElementById("error").innerText="Incorrect password. Please try again.";
+  }
+}
+</script>
+</body>
+</html>
